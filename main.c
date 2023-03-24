@@ -168,10 +168,10 @@ void other_cheats() {
 }
 
 int main() {
-    char x[1024];
-    char y[1024];
+    char x[1024] = { 0 };
+    char y[1024] = { 0 };
     Disclaimer();
-    while(1) {
+    while (1) {
         printf(">>> ");
         scanf("%s", x);
 
@@ -186,7 +186,13 @@ int main() {
             tactic(x, y);
             grenades(x, y);
             weapons(x, y);
-            printf("give %s\n", y);
+            if (y[0] != 0) {
+                printf("give %s\n", y);
+            } else {
+                printf("I couldn't understand that!\n");
+                printf("NOTE: The program is case sensitive!\n");
+            }
+            y[0] = 0;
         }
     }
     return 0;
