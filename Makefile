@@ -1,6 +1,6 @@
 files = *.c
 
-exec = bin/CS:GOWeapons
+exec = bin/CS-GO_Cheats
 
 linux64 = g++  -o $(exec) $(files) 
 
